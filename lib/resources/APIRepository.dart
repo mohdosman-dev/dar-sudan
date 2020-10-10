@@ -11,6 +11,7 @@ import 'network_exceptions.dart';
 class APIRepository {
   DioClient dioClient;
   String _baseUrl = "http://dummy.restapiexample.com/api/v1";
+  // String _baseUrl = "https://jsonplaceholder.typicode.com/posts";
 
   APIRepository() {
     var dio = Dio();
