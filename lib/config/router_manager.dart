@@ -9,7 +9,7 @@ class RouteName {
   static const String register = 'register';
 }
 
-class Router {
+class myRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteName.splash:

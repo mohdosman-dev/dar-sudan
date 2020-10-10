@@ -1,18 +1,20 @@
-import 'package:dar_sudan/model/theme_model.dart';
-import 'package:provider/provider.dart';
 
-List<SingleChildCloneableWidget> providers = [
+import 'package:dar_sudan/models/theme_model.dart';
+import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
+//
+List<SingleChildWidget> providers = [
   ...independentServices,
   ...uiConsumableProviders
 ];
 
-List<SingleChildCloneableWidget> independentServices = [
+List<SingleChildWidget> independentServices = [
   ChangeNotifierProvider<ThemeModel>(
     create: (context) => ThemeModel(),
   ),
 ];
 
-List<SingleChildCloneableWidget> uiConsumableProviders = [
+List<SingleChildWidget> uiConsumableProviders = [
 //  StreamProvider<User>(
 //    builder: (context) => Provider.of<AuthenticationService>(context, listen: false).user,
 //  )
