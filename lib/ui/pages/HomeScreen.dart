@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         backgroundColor: Colors.blueAccent,
       appBar: AppBar(
-        title: Text("Movies"),
+        title: Text("Users"),
       ),
       body: BlocBuilder<PhotoBloc, PhotoState<List<Employee>>>(
         builder: (BuildContext context, PhotoState<List<Employee>> state) {
@@ -53,11 +53,9 @@ class _HomeState extends State<Home> {
       itemCount: data.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          height: 300,
-          width: 300,
           child: Card(
             elevation: 1,
-            child: Text(data[index].data[index].employeeName),
+            child: Text(data[index].employeeName),
           ),
         );
       },

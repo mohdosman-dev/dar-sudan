@@ -39,27 +39,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
     ListScrn(),
     Profile(),
   ];
-  int _page = 0;
+  int _page = 2;
   GlobalKey _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _children[_page],
-      bottomNavigationBar: CurvedNavigationBar(
+      body: Stack(children: [_children[_page],Align(alignment: Alignment.bottomCenter,child:  CurvedNavigationBar(
         key: _bottomNavigationKey,
-        index: 0,
+        index: 2,
         height: 55.0,
         items: <Widget>[
           Icon(Icons.home, color: Colors.black, size: 30),
           Icon(Icons.favorite_border, color: Colors.black, size: 30),
           Icon(Icons.explore, color: Colors.black, size: 40),
-          Icon(Icons.list, color: Colors.black, size: 30),
+          Icon(Icons.mail_outline, color: Colors.black, size: 30),
           Icon(Icons.person_outline, color: Colors.black, size: 30),
         ],
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 300),
         onTap: (index) {
@@ -67,7 +66,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             _page = index;
           });
         },
-      ),
+      ),)],),
+
     );
   }
 }
